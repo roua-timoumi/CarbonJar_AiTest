@@ -116,3 +116,16 @@ Validating and interpreting the model using SHAP plots.
 Debugging:
 During the challenge, key debugging challenges included handling missing values caused by lag feature creation and correctly interpreting feature importance scores using RFE. Issues such as NaNs from shifting operations were resolved using forward and backward filling. RFE rankings were converted into meaningful scores for better interpretation. Careful alignment of model inputs ensured that SHAP worked correctly. Additionally, synthetic data generation was adjusted to prevent unstable calculations.
 
+Challenge 12 : 
+In this challenge, an anomaly detection system was built to handle an imbalanced classification problem. Synthetic data was generated with a large imbalance between normal and anomaly classes. The code applies SMOTE, a technique that artificially balances the dataset by creating synthetic samples of the minority class. Two logistic regression models were trained: one on the original imbalanced data and another on the data after SMOTE balancing. The models were evaluated and compared using multiple metrics and confusion matrices, highlighting the effect of oversampling on detection performance.
+
+Difficulty and debugging:
+Debugging this code meant carefully making sure SMOTE was used the right way—only on the training data so the test data stayed untouched. I had to pay close attention to how the data was split and make sure everything matched up correctly after creating new samples. It wasn’t always easy to get the plots and labels right so that the results for both models were easy to understand. I also had to handle warnings and set a fixed random seed to make sure the results were consistent every time I ran the code. Taking the time to carefully check each step—from creating the data, applying SMOTE, training the models, to evaluating them helped me catch small mistakes and finally get the code working smoothly with clear, reliable results.
+
+
+
+
+
+
+
+
