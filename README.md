@@ -69,3 +69,50 @@ I designed a Generative Adversarial Network (GAN) to produce new synthetic sampl
 Debugging Challenges and Insights
 Throughout the process, I encountered various debugging challenges, such as handling missing data correctly, configuring the imputation pipeline, and scaling GAN outputs accurately. Addressing warnings, verifying data shapes, and visually inspecting results were essential steps. This iterative debugging highlighted the persistence and attention to detail required when working with AI-driven data workflows.
 
+**** challenge 3 :   Feature Engineering Automation  
+
+This challenge involved creating a  pipeline to analyze emissions data and select the most important features for modeling emission intensity. The main steps included:
+
+Feature Engineering:
+
+Converting timestamps to datetime format and extracting temporal features (hour, day of week, month, quarter, weekend indicator).
+
+Calculating emission intensity as emissions normalized by production volume.
+
+Computing rolling statistics (mean, std, max, median, skewness) for emissions and production volume over a 7-day window.
+
+Creating lagged features and change features for emissions and production to capture temporal dependencies.
+
+Handling missing values by forward and backward filling to maintain data continuity.
+
+Feature Selection:
+
+Implementing two methods:
+
+SelectKBest using statistical tests (f_regression) to select top k features.
+
+Recursive Feature Elimination (RFE) with a Random Forest Regressor to iteratively select features based on model importance.
+
+Sorting and returning the selected features along with their importance scores.
+
+Model Validation with SHAP:
+
+Training a Random Forest model on the selected features.
+
+Using SHAP (SHapley Additive exPlanations) to interpret feature contributions and visualize their importance through summary plots.
+
+End-to-End Execution:
+
+Generating synthetic time series data for emissions and production.
+
+Applying feature engineering and selection.
+
+Predicting a target variable based on emission intensity and time features plus noise.
+
+Printing selected features and their importance scores.
+
+Validating and interpreting the model using SHAP plots.
+
+Debugging:
+During the challenge, key debugging challenges included handling missing values caused by lag feature creation and correctly interpreting feature importance scores using RFE. Issues such as NaNs from shifting operations were resolved using forward and backward filling. RFE rankings were converted into meaningful scores for better interpretation. Careful alignment of model inputs ensured that SHAP worked correctly. Additionally, synthetic data generation was adjusted to prevent unstable calculations.
+
