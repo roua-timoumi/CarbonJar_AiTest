@@ -173,8 +173,22 @@ In this challenge, a simple neural network model was first defined with a base p
 This challenge implements a Monte Carlo simulation to assess the net benefit of an investment in decarbonization while accounting for uncertainty in potential gains. Two key factors cost reduction and emission cut are modeled using normal distributions to reflect realistic variability. For each simulation run, random values are drawn for these two parameters, and the net benefit is calculated by combining cost savings and the monetary value of emissions reduced. The simulation is repeated 1,000 times to generate a distribution of outcomes, which is then analyzed using summary statistics (mean, median, standard deviation, min, max) and visualized as a histogram. This approach helps estimate the likelihood of achieving a positive net benefit despite uncertainties. 
 The main challenges addressed include accurately modeling uncertainty, ensuring values remain non-negative, and presenting results in a clear and interpretable way to support decision-making.
 
+*** challenge 19 : Time Management Under Pressure
 
+Initial Planning and Time Allocation
+When you're given only 4 hours to tune an AI model and things aren't going as planned, it's easy to feel overwhelmed. But with a structured approach and calm mindset, it’s possible to make real progress. I usually start by taking 15–20 minutes to understand the dataset and model setup. This helps me set a clear plan: maybe 1 hour for quick baseline tuning, 2 hours for deeper experiments, and the last 30–45 minutes to analyze results and document findings. Having those time blocks in mind helps me stay focused.
 
+Prioritizing the Right Hyperparameters
+Next, I prioritize which hyperparameters to tune. For example, if I’m working with a Random Forest or XGBoost model, I’ll start with key parameters like max_depth, n_estimators, or learning_rate—because I know from experience these have the most impact. I avoid wasting time tweaking smaller details too early. I usually go with random search or opt for libraries that offer smarter optimization like Optuna, instead of traditional grid search, which can be too time-consuming.
+
+Knowing When to Stop
+During tuning, I always watch performance metrics closely. If I see that changes aren't improving validation accuracy or the loss is stuck, I stop and switch gears instead of chasing small gains. Also, using techniques like early stopping or training on a data subset in the beginning helps save a lot of time.
+
+Time for Review and Reporting
+I always make sure to save the last 30 minutes for reviewing results, plotting graphs, and writing a clear summary of what worked and what didn’t. It's frustrating to have a great model but no time left to explain your choices or save the final version properly.
+
+Real-World Example
+A real example of this was during a credit scoring challenge where I used XGBoost. I quickly tested a few max_depth and learning_rate combinations, and after reaching a reasonable score, I froze those and focused on tuning subsample and colsample_bytree. I ended with a 3% improvement in AUC—and more importantly, I had enough time to prepare a clean report and submit it confidently.
 
 
 
