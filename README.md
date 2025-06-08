@@ -123,9 +123,14 @@ Difficulty and debugging:
 Debugging this code meant carefully making sure SMOTE was used the right way—only on the training data so the test data stayed untouched. I had to pay close attention to how the data was split and make sure everything matched up correctly after creating new samples. It wasn’t always easy to get the plots and labels right so that the results for both models were easy to understand. I also had to handle warnings and set a fixed random seed to make sure the results were consistent every time I ran the code. Taking the time to carefully check each step—from creating the data, applying SMOTE, training the models, to evaluating them helped me catch small mistakes and finally get the code working smoothly with clear, reliable results.
 
 
+*****Challenge 4 :  Modular AI-Augmented LCA Model
+What was done:
+In this project, we refactored a monolithic Life Cycle Assessment (LCA) model into a modular architecture comprising distinct classes: DataIngestor, EmissionFactorMapper, SupplyChainModel, ImpactCalculator, and UncertaintyAnalyzer. Each module encapsulates a clear responsibility, promoting code clarity, reusability, and easier maintenance. The UncertaintyAnalyzer implements a Monte Carlo simulation to quantify uncertainty in emissions estimates, while sensitivity analysis identifies which factors most influence the results.
 
+Why this model and architecture:
+This modular design aligns with best practices in software engineering, facilitating independent testing and incremental development. Separating concerns also makes it easier to integrate AI enhancements later—such as NLP for automated data extraction in DataIngestor or graph neural networks for supply chain modeling. The validation strategy includes deterministic calculations verified against expected outputs, Monte Carlo simulations to account for uncertainty, and sensitivity checks to validate model robustness.
 
-
-
+Debugging and challenges:
+Random sampling logic errors: Early Monte Carlo implementation had inconsistent ranges due to incorrect uncertainty bounds. Debugging with detailed logging and test runs helped ensure uniform sampling within expected bounds.
 
 
