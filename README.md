@@ -167,3 +167,16 @@ Debugging this code meant carefully making sure SMOTE was used the right way—o
 ***Challenge 13 :  Transfer Learning Across Regions
 
 In this challenge, a simple neural network model was first defined with a base part serving as a feature extractor and a final classification layer. Pre-trained weights were then simulated and loaded into the model, representing prior training on French data. To apply transfer learning, the parameters of the base layers were frozen to prevent them from being updated during further training. Only the final classification layer was set to be trainable. A small simulated dataset representing Egyptian data was created to fine-tune the model by adjusting only the classifier’s weights. An optimizer and a loss function were used to train the final layer over multiple epochs on this new dataset. Finally, the script prints out which parameters are trainable to confirm that only the intended layers are being updated. This approach allows adapting a pre-trained model to a new domain with limited data.
+
+***Challenge 15 :  Scenario Simulation for Decarbonization 
+
+This challenge implements a Monte Carlo simulation to assess the net benefit of an investment in decarbonization while accounting for uncertainty in potential gains. Two key factors cost reduction and emission cut are modeled using normal distributions to reflect realistic variability. For each simulation run, random values are drawn for these two parameters, and the net benefit is calculated by combining cost savings and the monetary value of emissions reduced. The simulation is repeated 1,000 times to generate a distribution of outcomes, which is then analyzed using summary statistics (mean, median, standard deviation, min, max) and visualized as a histogram. This approach helps estimate the likelihood of achieving a positive net benefit despite uncertainties. 
+The main challenges addressed include accurately modeling uncertainty, ensuring values remain non-negative, and presenting results in a clear and interpretable way to support decision-making.
+
+
+
+
+
+
+
+
