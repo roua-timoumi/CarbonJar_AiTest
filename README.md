@@ -150,6 +150,13 @@ In this challenge, a simple example was developed to demonstrate how domain know
 
 Additionally, several other methods for embedding domain knowledge were explored, including feature engineering, hybrid models, custom loss functions, and reinforcement learning with reward shaping. Each approach offers a different balance between compliance enforcement and system complexity, highlighting the importance of aligning AI behavior with real-world constraints.
 
+***Challenge 9:  AI-Driven Generation of Compliance Reports  
+
+What Was Done:
+The script was developed to generate dynamic HTML compliance reports using Python. It started by importing essential libraries such as jinja2 for HTML templating, matplotlib for data visualization, and supporting modules like base64, BytesIO, and datetime for image encoding and timestamping. A Jinja2 environment was set up with autoescaping enabled to ensure safe HTML rendering. The system first attempted to load a custom HTML template (report_template.html) and defaulted to a built-in template if the file was not found. A modular plotting function was created to support various chart types (bar, line, and pie), each rendered using matplotlib, converted to base64, and embedded into the HTML output. The report generation function processed input data (emissions, anomalies, thresholds), created relevant plots including optional historical trends, and populated the template with textual and visual content. Finally, the rendered report was saved as a timestamped HTML file, making it easy to archive and identify individual reports.
+
+
+
 
 ***Challenge 12 : Addressing Class Imbalance
 In this challenge, an anomaly detection system was built to handle an imbalanced classification problem. Synthetic data was generated with a large imbalance between normal and anomaly classes. The code applies SMOTE, a technique that artificially balances the dataset by creating synthetic samples of the minority class. Two logistic regression models were trained: one on the original imbalanced data and another on the data after SMOTE balancing. The models were evaluated and compared using multiple metrics and confusion matrices, highlighting the effect of oversampling on detection performance.
