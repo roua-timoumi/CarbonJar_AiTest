@@ -144,8 +144,14 @@ SHAP Compatibility
 Challenge: shap.Explanation requires exact input formatting and  breaks with newer/older versions.
 Fix: Match SHAP version to the code and manually construct Explanation objects .
 
+**** Challenge 7 : Embedding Domain Knowledge into AI  
 
-***Challenge 12 : 
+In this challenge, a simple example was developed to demonstrate how domain knowledge specifically regulatory constraints—can be integrated into AI systems. A simulated machine learning function predicts emission values, which are then post-processed to ensure they do not exceed a fixed regulatory cap (500.0). If a prediction surpasses this cap, it is either limited to the maximum allowed value or flagged as a "Regulatory Breach."
+
+Additionally, several other methods for embedding domain knowledge were explored, including feature engineering, hybrid models, custom loss functions, and reinforcement learning with reward shaping. Each approach offers a different balance between compliance enforcement and system complexity, highlighting the importance of aligning AI behavior with real-world constraints.
+
+
+***Challenge 12 : Addressing Class Imbalance
 In this challenge, an anomaly detection system was built to handle an imbalanced classification problem. Synthetic data was generated with a large imbalance between normal and anomaly classes. The code applies SMOTE, a technique that artificially balances the dataset by creating synthetic samples of the minority class. Two logistic regression models were trained: one on the original imbalanced data and another on the data after SMOTE balancing. The models were evaluated and compared using multiple metrics and confusion matrices, highlighting the effect of oversampling on detection performance.
 
 Difficulty and debugging:
